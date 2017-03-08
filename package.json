@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Supplies SPA",
   "scripts": {
-    "build": "webpack --optimize-dedupe --config webpack/webpack.config.js",
+    "build": "webpack --config webpack/webpack.config.standalone.js",
     "start": "webpack-dashboard -p 3001 -- webpack-dev-server --config webpack/webpack.config.standalone.js",
     "test": "_mocha --opts spec/mocha.opts"
   },

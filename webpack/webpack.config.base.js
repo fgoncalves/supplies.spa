@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.join(BASE_PATH, 'public'),
     filename: 'application.js',
-    chunkFilename: '[name]-[chunkhash].js'
+    publicPath: '/'
   },
   module: {
     loaders: [
@@ -16,26 +16,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [
-          path.resolve(BASE_PATH, 'src')
-        ]
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.gif|\.jpg|\.png$/,
-        loader: 'url-loader'
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf)$/,
-        loader: 'file-loader?name=/assets/fonts/[hash].[ext]'
-      },
-      {
-        test: /\.svg$/,
-        loaders: [
-          'url-loader',
-          'svgo-loader?' + svgoConfig
+          path.resolve(BASE_PATH, 'src/')
         ]
       }
     ]
@@ -43,11 +24,6 @@ module.exports = {
   resolve: {
     root: path.resolve(BASE_PATH),
     extensions: ['', '.js', '.json']
-  },
-  sassLoader: {
-    includePaths: [
-      path.resolve(BASE_PATH, 'node_modules')
-    ]
   },
   devtool: 'source-map'
 };

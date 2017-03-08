@@ -16,9 +16,6 @@ module.exports = Object.assign({}, baseConfig, {
       }
     ])
   },
-  output: Object.assign({}, baseConfig.output, {
-    publicPath: 'http://localhost:8080/'
-  }),
   plugins: basePlugins.concat([
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin({ port: 3001 })
