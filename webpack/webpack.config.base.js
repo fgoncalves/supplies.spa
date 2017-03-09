@@ -1,4 +1,7 @@
+require('dotenv').load({ silent: true })
+
 const path = require('path');
+const webpack = require('webpack');
 const BASE_PATH = path.join(__dirname, '..');
 
 module.exports = {
@@ -21,6 +24,15 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.EnvironmentPlugin([
+      'FIREBASE_API_KEY',
+      'FIREBASE_AUTH_DOMAIN',
+      'FIREBASE_DATABASE_URL',
+      'FIREBASE_STORAGE_BUCKET',
+      'FIREBASE_MESSAGING_SENDER_ID'
+    ])
+  ],
   resolve: {
     root: path.resolve(BASE_PATH),
     extensions: ['', '.js', '.json']
