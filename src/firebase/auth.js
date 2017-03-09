@@ -9,9 +9,7 @@ const config = {
     messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
 };
 
-const app = firebase.initializeApp(config);
-console.log(app.name)
-
+firebase.initializeApp(config);
 const auth = firebase.auth();
 
 export default auth;

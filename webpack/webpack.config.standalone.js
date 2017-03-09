@@ -1,9 +1,7 @@
-const path = require('path');
 const webpack = require('webpack');
 const baseConfig = require('./webpack.config.base');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
-const BASE_PATH = path.join(__dirname, '..');
 const basePlugins = baseConfig.plugins || [];
 const baseLoaders = baseConfig.module.loaders;
 

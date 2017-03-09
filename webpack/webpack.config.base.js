@@ -1,4 +1,4 @@
-require('dotenv').load({ silent: true })
+require('dotenv').load({ silent: true });
 
 const path = require('path');
 const webpack = require('webpack');

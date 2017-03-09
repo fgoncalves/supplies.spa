@@ -1,14 +1,14 @@
-import React, {Component} from 'react';
-import GoogleSignInButton from '../components/GoogleSignInButton'
+import React, { Component } from 'react';
+import GoogleSignInButton from '../components/GoogleSignInButton';
 
 class Login extends Component {
-  render() {
-    return <GoogleSignInButton onClick={this.handleGoogleSignInButtonClick} />
+  handleGoogleSignInButtonClick() {
+
   }
 
-  handleGoogleSignInButtonClick(event) {
-    console.log("Works");
-  };
+  render() {
+    return <GoogleSignInButton onClick={this.handleGoogleSignInButtonClick} />;
+  }
 }
 
 export default Login;

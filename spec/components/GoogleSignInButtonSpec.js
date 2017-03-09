@@ -10,7 +10,7 @@ describe('Google Sign In Button', () => {
   const props = {
     onClick: onClickCallback,
     className
-  }
+  };
   let googleSignInButton;
 
   beforeEach(() => {

@@ -6,11 +6,11 @@ function GoogleSignInButton({ onClick, className }) {
       <span>Sign In with Google</span>
     </div>
   );
-};
+}
 
 GoogleSignInButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string
-}
+};
 
 export default GoogleSignInButton;

@@ -4,7 +4,6 @@ import chai from 'chai';
 import sinonChai from 'sinon-chai';
 import chaiAsPromised from 'chai-as-promised';
 import chaiEnzyme from 'chai-enzyme';
-import path from 'path';
 import chaiReact from 'chai-react';
 
 

@@ -4,6 +4,7 @@
   "description": "Supplies SPA",
   "scripts": {
     "build": "webpack --config webpack/webpack.config.standalone.js",
+    "lint": "eslint src spec test webpack",
     "start": "webpack-dashboard -p 3001 -- webpack-dev-server --config webpack/webpack.config.standalone.js",
     "test": "_mocha --opts spec/mocha.opts"
   },
