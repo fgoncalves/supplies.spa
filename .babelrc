@@ -21,7 +21,7 @@
         [
           "webpack-alias",
           {
-            "config": "./webpack/webpack.config.js"
+            "config": "./webpack/webpack.config.standalone.js"
           }
         ]
       ]

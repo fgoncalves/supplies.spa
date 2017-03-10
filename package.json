@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "description": "Supplies SPA",
   "scripts": {
-    "build": "webpack --config webpack/webpack.config.standalone.js",
+    "build": "NODE_ENV=production webpack --config webpack/webpack.config.base.js",
     "lint": "eslint src spec test webpack",
-    "start": "webpack-dashboard -p 3001 -- webpack-dev-server --config webpack/webpack.config.standalone.js",
-    "test": "_mocha --opts spec/mocha.opts"
+    "start": "NODE_ENV=development webpack-dashboard -p 3001 -- webpack-dev-server --config webpack/webpack.config.standalone.js",
+    "posttest": "npm run lint",
+    "test": "NODE_ENV=testing _mocha --opts spec/mocha.opts",
+    "test:unit:coverage": "NODE_ENV=testing istanbul cover -x 'spec/**/*.js' --report html --report lcov _mocha -- --opts spec/mocha.opts"
   },
   "repository": {
     "type": "git",
@@ -53,7 +55,7 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.10.1",
     "istanbul": "1.1.0-alpha.1",
-    "jsdomify": "^2.0.1",
+    "jsdomify": "^2.2.0",
     "json-loader": "^0.5.4",
     "jsonfile": "^2.3.0",
     "mocha": "^3.1.2",

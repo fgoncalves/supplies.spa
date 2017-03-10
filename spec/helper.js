@@ -1,5 +1,6 @@
 
 import 'babel-polyfill';
+import jsdomify from 'jsdomify';
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
 import chaiAsPromised from 'chai-as-promised';
@@ -12,7 +13,15 @@ chai.use(chaiAsPromised);
 chai.use(chaiEnzyme());
 chai.use(chaiReact);
 
+jsdomify.create();
+
+before(() => jsdomify.create());
+
+beforeEach(() => jsdomify.clear());
+
 after(() => {
+  jsdomify.destroy();
+
   // Delete require cache because React, when imported,
   // caches a reference to the document. Since we need to rebuild
   // the document on every suite run, we also need to flush

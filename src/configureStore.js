@@ -6,11 +6,10 @@ const middleware = [
   thunkMiddleware
 ];
 
-// TODO: Add production and development setups
-// if (process.env.NODE_ENV !== 'production') {
-//   const createLogger = require('redux-logger');
-//   middleware.push(createLogger());
-// }
+if (process.env.NODE_ENV !== 'production') {
+  const createLogger = require('redux-logger');
+  middleware.push(createLogger());
+}
 
 export default function configureStore() {
   const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
