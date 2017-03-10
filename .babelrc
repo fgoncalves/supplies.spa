@@ -17,12 +17,6 @@
               "expose": "src"
             }
           ]
-        ],
-        [
-          "webpack-alias",
-          {
-            "config": "./webpack/webpack.config.standalone.js"
-          }
         ]
       ]
     }
