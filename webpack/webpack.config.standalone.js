@@ -3,17 +3,8 @@ const baseConfig = require('./webpack.config.base');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
 const basePlugins = baseConfig.plugins || [];
-const baseLoaders = baseConfig.module.loaders;
 
 module.exports = Object.assign({}, baseConfig, {
-  module: {
-    loaders: baseLoaders.concat([
-      {
-        test: /\.scss$/,
-        loader: 'style!css?sourceMap!sass?sourceMap'
-      }
-    ])
-  },
   plugins: basePlugins.concat([
     new webpack.HotModuleReplacementPlugin(),
     new DashboardPlugin({ port: 3001 })
