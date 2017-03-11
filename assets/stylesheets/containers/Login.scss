@@ -1,0 +1,13 @@
+@import 'mixins';
+@import 'base';
+
+#loginContainer {
+  @include card(380px);
+}
+
+.appTitle {
+    @extend .title;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px;
+}

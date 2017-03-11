@@ -18,7 +18,12 @@ export class Login extends Component {
   }
 
   render() {
-    return <GoogleSignInButton onClick={this.handleGoogleSignInButtonClick(this.props)} />;
+    return (
+      <div id="loginContainer">
+        <h1 className="appTitle">Supplies</h1>
+        <GoogleSignInButton onClick={this.handleGoogleSignInButtonClick(this.props)} />
+      </div>
+    );
   }
 }
 
