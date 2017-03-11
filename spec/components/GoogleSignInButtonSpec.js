@@ -5,11 +5,9 @@ import sinon from 'sinon';
 import GoogleSignInButton from 'src/components/GoogleSignInButton';
 
 describe('Google Sign In Button', () => {
-  const className = 'some class';
   const onClickCallback = sinon.spy();
   const props = {
-    onClick: onClickCallback,
-    className
+    onClick: onClickCallback
   };
   let googleSignInButton;
 
@@ -19,10 +17,6 @@ describe('Google Sign In Button', () => {
 
   afterEach(() => {
     onClickCallback.reset();
-  });
-
-  it('renders the button with the given class', () => {
-    expect(googleSignInButton.hasClass(className)).to.be.true;
   });
 
   context('when clicked', () => {

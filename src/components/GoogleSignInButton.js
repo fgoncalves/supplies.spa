@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 
-function GoogleSignInButton({ onClick, className }) {
+function GoogleSignInButton({ onClick }) {
   return (
-    <div onClick={ onClick } className={ className }>
+    <div onClick={ onClick } className="button buttonBlue">
       <span>Sign In with Google</span>
     </div>
   );
